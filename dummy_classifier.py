@@ -2,7 +2,12 @@
 
 from sklearn import tree
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+# from sklearn.naive_bayes import BernoulliNB
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
+from sklearn.externals import joblib
+from scipy.spatial import distance
 
 print("This is just a dummy classifier that simulates packet sizes in order")
 
@@ -23,14 +28,26 @@ streams = [
 labels = [0, 0, 0, 1, 1, 1]
 
 # We can either do a decision tree or a KNN classifier.
+# We don't use a Decision Tree because of the information here:
+# http://scikit-learn.org/stable/modules/tree.html
 # clf = tree.DecisionTreeClassifier()
-clf = KNeighborsClassifier()
+
+# http://scikit-learn.org/stable/modules/neighbors.html
+# clf = KNeighborsClassifier()
+
+# http://scikit-learn.org/stable/modules/naive_bayes.html
+clf = GaussianNB()
+clf = MultinomialNB()
+
 clf = clf.fit(streams, labels)
 
 x_test = [
     [123, 191, 83, 262, 154, 140],
     [139, 155, 139, 157, 162, 140],
 ]
+
+# Save a snapshot of this classifier.
+joblib.dump(clf, "./classifier.dmp", compress=9)
 
 print(clf.predict([x_test[0]]))
 print(clf.predict([x_test[1]]))
