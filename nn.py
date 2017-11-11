@@ -89,4 +89,4 @@ with tf.Session() as sess:
 
     #tf.train.import_meta_graph('mnist.meta')
     saver = tf.train.Saver()
-    saver.save(sess, 'mnist.data')
+    saver.save(sess, './mnist.data')

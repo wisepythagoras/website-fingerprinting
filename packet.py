@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
+import sys
 import dpkt
 import datetime
 
-f = open('data/jjay-w-tor.pcap')
+if len(sys.argv) == 1:
+    print("An argument is required")
+    exit(1)
+
+f = open(sys.argv[1])
 # f = open('data/jjay-w-tor-2nd.pcap')
 
 pcap = dpkt.pcap.Reader(f)
