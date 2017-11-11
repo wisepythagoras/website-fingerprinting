@@ -112,6 +112,7 @@ with open('config.json') as fp:
     # This is where all the labels are going to live.
     labels = []
     labels_str = []
+    base_labels = [None] * len(config['pcaps'])
 
     # The base label starts from 1 and increments after that.
     current_label = 1
@@ -119,6 +120,7 @@ with open('config.json') as fp:
 
     for domain in config['pcaps']:
         print(" - {}".format(domain))
+        base_labels[current_label - 1] = domain
         i = 0
 
         # Traverse the directory for all the pcaps.
@@ -160,8 +162,7 @@ with open('config.json') as fp:
 
             # Print the results.
             # print("Prediction: {} - Real: {}".format(config['pcaps'][prediction[0]], labels_str[i]))
-            print("[{}] {} real = {}".format(i, prediction[0], labels[i]))
-            print("    Prediction: {} - Real: {}".format(config['pcaps'][prediction[0]], labels_str[i]))
+            print("[{}] Prediction: {} - Real: {}".format(i, base_labels[prediction[0] - 1], labels_str[i]))
 
             i += 1
 
