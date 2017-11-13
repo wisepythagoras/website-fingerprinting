@@ -88,11 +88,6 @@ def train(streams, labels):
     # Save a snapshot of this classifier.
     joblib.dump(clf, "./classifier-nb.dmp", compress=9)
 
-    # Testing session.
-
-    # print(clf.predict([testing_x[0]]))
-    # print(testing_y[0])
-
     # Get the prediction.
     predictions = clf.predict(testing_x)
 
@@ -132,8 +127,6 @@ with open('config.json') as fp:
                 # This is the pcap file we'll be reading at this point.
                 file = os.path.join("./pcaps/{}".format(domain), file)
 
-                # print("  + {}".format(file))
-
                 # Read the pcap file and append it to the streams array.
                 streams.append(read_pcap_file(file))
 
@@ -144,7 +137,6 @@ with open('config.json') as fp:
                 i += 1
 
         print "    {} pcap files".format(i)
-
 
         # Increment the label
         current_label += 1
@@ -161,7 +153,6 @@ with open('config.json') as fp:
             prediction = classifier.predict([stream])
 
             # Print the results.
-            # print("Prediction: {} - Real: {}".format(config['pcaps'][prediction[0]], labels_str[i]))
             print("[{}] Prediction: {} - Real: {}".format(i, base_labels[prediction[0] - 1], labels_str[i]))
 
             i += 1
