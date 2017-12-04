@@ -69,7 +69,7 @@ def train(streams, labels):
     training_size = int(stream_amount * 0.9)
 
     # Get 70% of the streams for training purposes.
-    training_x= streams[:training_size]
+    training_x = streams[:training_size]
     training_y = labels[:training_size]
 
     # Get 30% of the streams for testing purposes

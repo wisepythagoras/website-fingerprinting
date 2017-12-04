@@ -70,6 +70,10 @@ with tf.Session() as sess:
 
     for step in range(1, num_steps+1):
         batch_x, batch_y = mnist.train.next_batch(batch_size)
+        print(len(batch_x))
+        print(len(batch_x))
+        print(num_classes)
+
         # Run optimization op (backprop)
         sess.run(train_op, feed_dict={X: batch_x, Y: batch_y})
         if step % display_step == 0 or step == 1:
