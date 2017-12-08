@@ -14,7 +14,14 @@ from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
 
 
-def append_to_log(domain, data):
+def empty_csv():
+    """ Empties the CSV file. """
+
+    with open("./fingerprints.csv", 'w') as f:
+        f.write("")
+
+
+def append_to_csv(domain, data):
     """ Append the information to the log file. """
 
     with open("./fingerprints.csv", 'a') as f:
@@ -73,13 +80,7 @@ def read_pcap_file(file):
     # Loop through all the packets and save the sizes.
     for ts, buf in pcap:
         packet_size = len(buf)
-
-        if i < 40:
-            # Add the size to the array.
-            sizes[i] = packet_size
-
-            # Increment the index.
-            i += 1
+        is_outgoing = True
 
         # Parse the Ethernet packet.
         eth = dpkt.ethernet.Ethernet(buf)
@@ -106,6 +107,16 @@ def read_pcap_file(file):
 
             # Increment the size of the incoming packets.
             incoming_size += packet_size
+
+            # This is an incoming packet.
+            is_outgoing = False
+
+        if i < 40:
+            # Add the size to the array.
+            sizes[i] = packet_size if is_outgoing else -packet_size
+
+            # Increment the index.
+            i += 1
 
         # Increment the total amount of packets.
         total_number_of_packets += 1
@@ -196,6 +207,8 @@ with open('config.json') as fp:
     current_label = 1
     pat = re.compile(".*-curl\.pcap$")
 
+    empty_csv()
+
     for domain in config['pcaps']:
         print(" - {}".format(domain))
         base_labels[current_label - 1] = domain
@@ -217,7 +230,7 @@ with open('config.json') as fp:
                 streams.append(data)
 
                 # Append everything to the log.
-                append_to_log(domain, data)
+                append_to_csv(domain, data)
 
                 # Add a label for the new file.
                 labels.append(current_label)
