@@ -14,6 +14,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
 
 
+def append_to_log(domain, data):
+    """ Append the information to the log file. """
+
+    with open("./fingerprints.csv", 'a') as f:
+        f.write("{},{}\n".format(domain, ','.join(str(num) for num in data)))
+
+
 def inet_to_str(inet):
     """ Convert inet object to a string """
 
@@ -107,8 +114,8 @@ def read_pcap_file(file):
     ratio = float(incoming_packets) / (outgoing_packets if outgoing_packets != 0 else 1)
 
     # Print some details.
-    print "OUT: {}, IN: {}, TOTAL: {}, RATIO: {}".format(\
-        outgoing_packets, incoming_packets, total_number_of_packets, ratio)
+    print "OUT: {}, IN: {}, TOTAL: {}, SIZE: {}, RATIO: {}".format(\
+        outgoing_packets, incoming_packets, total_number_of_packets, incoming_size, ratio)
 
     # Reverse the array to append the other information.
     sizes.reverse()
@@ -197,14 +204,20 @@ with open('config.json') as fp:
         # Traverse the directory for all the pcaps.
         for file in os.listdir('./pcaps/{}'.format(domain)):
             if file.endswith(".pcap") and (pat.match(file) is None):
-                if i > 20:
+                if i > 40:
                     break
 
                 # This is the pcap file we'll be reading at this point.
                 file = os.path.join("./pcaps/{}".format(domain), file)
 
-                # Read the pcap file and append it to the streams array.
-                streams.append(read_pcap_file(file))
+                # Read the pcap file.
+                data = read_pcap_file(file)
+
+                # Append the data to the streams array.
+                streams.append(data)
+
+                # Append everything to the log.
+                append_to_log(domain, data)
 
                 # Add a label for the new file.
                 labels.append(current_label)
