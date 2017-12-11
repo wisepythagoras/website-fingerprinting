@@ -1,0 +1,12 @@
+{
+  "name": "website-fingerprinting",
+  "version": "1.0.0",
+  "description": "The defense for website fingerprinting attacks",
+  "main": "index.js",
+  "repository": "git@github.com:conmarap/website-fingerprinting",
+  "author": "Constantine Apostolou <conmarap@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "toragent": "^0.1.1"
+  }
+}
