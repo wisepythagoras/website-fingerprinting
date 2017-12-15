@@ -26,6 +26,12 @@ torsocks curl -L http://httpbin.org/ip
 # Etc...
 ```
 
+### Required Python Modules
+
+``` bash
+pip install sklearn dpkt
+```
+
 ## Data Collection
 
 For the data collection process two terminal windows in a side-by-side orientation are required, as this process is fairly manual. Also, it's advised to collect the fingerprints in a VM, in order to avoid caputring any unintended traffic. To listen on traffic there exists a script, namely [capture.sh](pcaps/capture.sh), which should be run in one of the terminals:
