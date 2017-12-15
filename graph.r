@@ -2,7 +2,7 @@
 
 library(plotly)
 
-data <- read.csv("/home/conmarap/Projects/website-fingerprinting/example-fingerprints/fingerprints.csv")
+data <- read.csv("./example-fingerprints/fingerprints.csv")
 colors <- c('#4AC6B7', '#1972A4', '#965F8A', '#FF7070', '#C61951', '#FAEF44', '#DEAF69')
 
 p <- plot_ly(data, x = ~total_number_packets, y = ~no_incoming_packets, z = ~no_outgoing_packets, color = ~domain, size = ~total_incoming_sizes, colors = colors,
