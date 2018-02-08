@@ -52,13 +52,23 @@ Once the website has finished loading, the capture process needs to be killed, a
 
 [Scikit Learn](http://scikit-learn.org/stable/) was used to write a [k Nearest Neighbors](http://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification) classifier, that would read the pcap files, as specified in the [config.json](config.json) file. `config.json` can be changed according to which webpages were targeted for training. The training script is [gather_and_train.py](gather_and_train.py).
 
-![Scikit Learn kNN](http://scikit-learn.org/stable/_images/sphx_glr_plot_classification_0021.png)
+<p align="center">
+    <img src="http://scikit-learn.org/stable/_images/sphx_glr_plot_classification_0021.png" alt="Scikit Learn kNN" />
+</p>
 
 ## Classifying Unknown Traffic
 
 Once the training is done, and the `classifier-nb.dmp` is created, the [predict.py](predict.py) script can be run with the pcap file as the sole argument. The script will load the classifier and attempt to identify which web page the traffic originated from.
 
 It is worth noting that from each sample only the first 40 packets will be used to train a usable model and to run through the resulting classifier.
+
+<p align="center">
+    <img src="graphs/three-websites.png" alt="Visualizing the patterns" />
+</p>
+
+As it can be seen in the screenshot above, the patterns of the packets of each website can be seen clearly on a 3D scale. The classifier visualizes the data in a similar way and gives us the most accurate result.
+
+An interactive version of this graph can be found [here](https://conmarap.com/website-fingerprinting/graphs/) or in the [graphs](graphs) folder.
 
 ## Limitations and Disclaimers
 
