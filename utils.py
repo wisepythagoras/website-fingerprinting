@@ -5,7 +5,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.externals import joblib
+from joblib import dump
 
 
 def empty_csv():
@@ -174,7 +174,7 @@ def train(streams, labels):
     clf = clf.fit(training_x, training_y)
 
     # Save a snapshot of this classifier.
-    joblib.dump(clf, "./classifier-nb.dmp", compress=9)
+    dump(clf, "./classifier-nb.dmp", compress=9)
 
     # Get the prediction.
     predictions = clf.predict(testing_x)
