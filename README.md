@@ -8,10 +8,13 @@ For this experiment Tor is required. It can be installed by running the followin
 
 ``` bash
 # For Debian or Ubuntu
-sudo apt install tor lynx
+sudo apt install tor torsocks lynx
 
 # For Fedora
 sudo yum install tor lynx
+
+# For ArchLinux
+sudo pacman -S tor torsocks lynx
 ```
 
 By installing Tor we also get a program called `torsocks`; this program will be used to redirect traffic of common programs through the Tor network. For example, it can be run as follows:
@@ -37,7 +40,8 @@ pip install sklearn dpkt
 For the data collection process two terminal windows in a side-by-side orientation are required, as this process is fairly manual. Also, it's advised to collect the fingerprints in a VM, in order to avoid caputring any unintended traffic. To listen on traffic there exists a script, namely [capture.sh](pcaps/capture.sh), which should be run in one of the terminals:
 
 ``` bash
-./pcaps/capture.sh duckduckgo.com
+# ./pcaps/capture.sh [interface] [label]
+./pcaps/capture.sh wlp2s0 duckduckgo.com
 ```
 
 Once the listener is capturing traffic, on the next terminal run:
