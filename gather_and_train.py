@@ -65,7 +65,7 @@ with open('config.json') as fp:
 
                 i += 1
 
-        print "    {} pcap files".format(i)
+        print("    {} pcap files".format(i))
 
         # Increment the label
         current_label += 1
