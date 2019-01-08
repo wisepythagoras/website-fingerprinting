@@ -5,7 +5,6 @@ import re
 import sys
 import json
 import utils
-from sklearn.externals import joblib
 
 
 # Read the configuration and start training.
@@ -65,7 +64,7 @@ with open('config.json') as fp:
 
                 i += 1
 
-        print "    {} pcap files".format(i)
+        print(f"    {i} pcap files")
 
         # Increment the label
         current_label += 1

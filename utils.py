@@ -119,8 +119,11 @@ def read_pcap_file(file):
     ratio = float(incoming_packets) / (outgoing_packets if outgoing_packets != 0 else 1)
 
     # Print some details.
-    print "OUT: {}, IN: {}, TOTAL: {}, SIZE: {}, RATIO: {}".format(\
-        outgoing_packets, incoming_packets, total_number_of_packets, incoming_size, ratio)
+    print(f'OUT: {outgoing_packets},' +
+            f'IN: {incoming_packets},' +
+            f'TOTAL: {total_number_of_packets},' +
+            f'SIZE: {incoming_size},' +
+            f'RATIO: {ratio}')
 
     # Reverse the array to append the other information.
     sizes.reverse()
