@@ -8,11 +8,10 @@ if len(sys.argv) == 1:
     print("An argument is required")
     exit(1)
 
-f = open(sys.argv[1])
-# f = open('data/jjay-w-tor-2nd.pcap')
+f = open(sys.argv[1], 'rb')
 
 pcap = dpkt.pcap.Reader(f)
-open_time = 0;
+open_time = 0
 
 for ts, buf in pcap:
     if open_time is 0:
