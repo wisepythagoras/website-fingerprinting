@@ -52,7 +52,7 @@ def read_pcap_file(file):
     """ Read the pcap file and return the sizes of the packets. """
 
     # Read the file.
-    fp = open(file)
+    fp = open(file, 'rb')
 
     # Create the pcap object
     pcap = dpkt.pcap.Reader(fp)

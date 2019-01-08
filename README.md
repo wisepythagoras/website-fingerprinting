@@ -13,6 +13,9 @@ sudo apt install tor lynx
 
 # For Fedora
 sudo yum install tor lynx
+
+# For ArchLinux
+sudo pacman -S tor torsocks lynx
 ```
 
 By installing Tor we also get a program called `torsocks`; this program will be used to redirect traffic of common programs through the Tor network. For example, it can be run as follows:
@@ -27,7 +30,7 @@ torsocks curl -L http://httpbin.org/ip
 # Etc...
 ```
 
-### Required Python Modules
+## Required Python 3 Modules
 
 ``` bash
 pip install sklearn dpkt
@@ -59,6 +62,10 @@ Once the website has finished loading, the capture process needs to be killed, a
 
 ## Classifying Unknown Traffic
 
+```bash
+# python predict.py [packet to classify]
+  python predict.py xyz.pcap
+```
 Once the training is done, and the `classifier-nb.dmp` is created, the [predict.py](predict.py) script can be run with the pcap file as the sole argument. The script will load the classifier and attempt to identify which web page the traffic originated from.
 
 It is worth noting that from each sample only the first 40 packets will be used to train a usable model and to run through the resulting classifier.
@@ -82,4 +89,3 @@ Traffic is never "clean", as the assumption was - for simplicity - in this resea
 1. Wang, T. and Goldberg, I. (2017). Website Fingerprinting. [online] Cse.ust.hk. Available at: https://www.cse.ust.hk/~taow/wf/.
 2. Wang, T. and Goldberg, I. (2017). Improved Website Fingerprinting on Tor. Cheriton School of Computer Science. Available at: http://www.cypherpunks.ca/~iang/pubs/webfingerprint-wpes.pdf
 3. Wang, T. (2015). Website Fingerprinting: Attacks and Defenses. University of Waterloo. Available at: https://uwspace.uwaterloo.ca/bitstream/handle/10012/10123/Wang_Tao.pdf
-
