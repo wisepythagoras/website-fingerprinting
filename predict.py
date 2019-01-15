@@ -4,7 +4,7 @@ import os.path
 import sys
 import json
 import utils
-from sklearn.externals import joblib
+from joblib import load
 
 
 if len(sys.argv) == 1:
@@ -46,7 +46,7 @@ with open('config.json') as fp:
 print("Loading the classifier...")
 
 # Try to read the classifier.
-classifier = joblib.load("./classifier-nb.dmp")
+classifier = load("./classifier-nb.dmp")
 i = 0
 right = 0
 wrong = 0
