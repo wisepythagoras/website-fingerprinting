@@ -32,7 +32,7 @@ torsocks curl -L http://httpbin.org/ip
 ## Required Python 3 Modules
 
 ``` bash
-pip install sklearn dpkt
+pip install sklearn dpkt joblib
 ```
 
 ## Data Collection
