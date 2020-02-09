@@ -1,0 +1,29 @@
+{
+    "newsapi_key": "<your_api_key_here>",
+    "sources": [
+        "https://duckduckgo.com",
+        "https://duckduckgo.com/about",
+        "https://stackoverflow.com/questions/47745378/float-pointer-malloc-array-receiving-into-array",
+        "https://stackoverflow.com/questions/15445285/how-can-i-connect-to-a-tor-hidden-service-using-curl-in-php",
+        "https://github.com",
+        "https://github.com/bitcoin/bitcoin",
+        "https://github.com/torproject/tor",
+        "https://ny.gov",
+        "http://www.jjay.cuny.edu",
+        "http://jjay.cuny.edu/webapps",
+        "https://mail.jjay.cuny.edu/lm_auth_proxy",
+        "http://perdu.com",
+        "https://reddit.com",
+        "https://reddit.com/r/privacy",
+        "https://reddit.com/r/tor",
+        "https://reddit.com/r/news",
+        "https://torproject.org",
+        "http://pwnable.kr/play.php",
+        "https://www.sfml-dev.org/",
+        "https://www.sfml-dev.org/download.php",
+        "https://github.com/zhaopuming/awesome-d",
+        "http://www.cnn.com/",
+        "http://www.cnn.com/2017/12/10/politics/schiff-gop-discredit-mueller-sotu-cnntv/index.html",
+        "http://www.cnn.com/2017/12/10/politics/susan-collins-tax-reform-vote/index.html"
+    ]
+}
