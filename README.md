@@ -4,7 +4,8 @@ Website fingerprinting is a method of Tor or VPN packet inspection that aims to 
 
 ## Introduction
 
-For this experiment Tor is required. It can be installed by running the following commands:
+For this experiment, Tor is required. It can be installed by running the following commands:
+
 
 ``` bash
 # For Debian or Ubuntu
@@ -24,7 +25,6 @@ torsocks ssh user@example.com
 torsocks curl -L http://httpbin.org/ip
 
 # Etc...
-```
 
 ### Required Python Modules
 
@@ -66,15 +66,15 @@ It is worth noting that from each sample only the first 40 packets will be used 
     <img src="graphs/graph-screenshot.png" alt="Visualizing the patterns" />
 </p>
 
-As it can be seen in the screenshot above, the patterns of the packets of each website can be seen clearly on a 3D scale. The classifier visualizes the data in a similar way and gives us the most accurate result.
+As can be seen in the screenshot above, the patterns of the packets of each website can be seen clearly on a 3D scale. The classifier visualizes the data in a similar way and gives us the most accurate result.
 
 An interactive version of this graph can be found in the [graphs](graphs) folder.
 
 ## Limitations and Disclaimers
 
-This setup was created in order to research the topic of website fingerprinting and how easy it is to attempt to deanonymize users over Tor or VPNs. Traffic was captured and identified in a private setting and for purely academic purposes; use of this source code is intended for those reasons only.
+This setup was created in order to research the topic of website fingerprinting and how easy it is to attempt to deanonymize users over Tor or VPNs. Traffic was captured and identified in a private setting and for purely academic purposes; the use of this source code is intended for those reasons only.
 
-Traffic is never "clean", as the assumption was - for simplicity - in this reasearch. However, if an entity has enough resources, the desired anonymized traffic can be isolated and fed into this simple classifier. This means that it is entirely possible to use a method like this to compromise anonymized users.
+Traffic is never "clean", as the assumption was - for simplicity - in this research. However, if an entity has enough resources, the desired anonymized traffic can be isolated and fed into this simple classifier. This means that it is entirely possible to use a method like this to compromise anonymized users.
 
 ## References
 
