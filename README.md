@@ -25,6 +25,7 @@ torsocks ssh user@example.com
 torsocks curl -L http://httpbin.org/ip
 
 # Etc...
+```
 
 ### Required Python Modules
 
