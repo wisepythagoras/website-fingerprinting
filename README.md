@@ -2,6 +2,8 @@
 
 Website fingerprinting is a method of Tor or VPN packet inspection that aims to collect enough features and information from individual sessions that could aid in identifying the activity of anonymized users.
 
+Contributions and bug fixes are welcome.
+
 ## Introduction
 
 For this experiment, Tor is required. It can be installed by running the following commands:
