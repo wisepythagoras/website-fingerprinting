@@ -59,7 +59,7 @@ Once the website has finished loading, the capture process needs to be killed, a
 [Scikit Learn](http://scikit-learn.org/stable/) was used to write a [k Nearest Neighbors](http://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification) classifier, that would read the pcap files, as specified in the [config.json](config.json) file. `config.json` can be changed according to which webpages were targeted for training. The training script is [gather_and_train.py](gather_and_train.py).
 
 <p align="center">
-    <img src="http://scikit-learn.org/stable/_images/sphx_glr_plot_classification_0021.png" alt="Scikit Learn kNN" />
+    <img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_classification_001.png" alt="Scikit Learn kNN" />
 </p>
 
 ## Classifying Unknown Traffic
