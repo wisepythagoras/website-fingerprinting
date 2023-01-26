@@ -36,6 +36,10 @@ torsocks curl -L http://httpbin.org/ip
 
 ``` bash
 pip install sklearn dpkt joblib
+
+# Or...
+
+pip install -r requirements.txt
 ```
 
 ## Data Collection

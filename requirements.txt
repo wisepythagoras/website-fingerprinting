@@ -1,0 +1,4 @@
+scikit-learn==1.2.1
+dpkt==1.9.8
+joblib==1.2.0
+chart-studio==1.1.0
