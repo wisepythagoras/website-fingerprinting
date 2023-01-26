@@ -100,4 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 *.pcap
+classifier-nb.dmp
+fingerprints.csv
+*.html
 

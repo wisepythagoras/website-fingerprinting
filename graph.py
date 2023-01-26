@@ -1,6 +1,6 @@
-from plotly import offline
-import plotly.plotly as py
-import plotly.graph_objs as go
+import chart_studio.plotly as py
+import plotly.graph_objects as go
+import plotly.io as pio
 import numpy as np
 import pandas as pd
 
@@ -36,5 +36,5 @@ for i in range(0, len(x)):
 layout = go.Layout(margin=dict(l=0, r=0, b=0, t=0))
 
 fig = go.Figure(data=data, layout=layout)
-offline.plot(fig, filename='graphs/graph.html', auto_open=False)
+pio.write_html(fig, file='graphs/graph.html', auto_open=True)
 

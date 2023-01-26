@@ -1,11 +1,7 @@
 {
   "pcaps": [
-    "duckduckgo.com",
-    "github.com",
-    "jjay.cuny.edu",
-    "telegram.org",
-    "reddit.com",
-    "torproject.org",
-    "perdu.com"
+    "example.com",
+    "google.com",
+    "duckduckgo.com"
   ]
 }

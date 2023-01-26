@@ -61,3 +61,4 @@ print(classifier.predict_proba([stream]))
 
 # Print the results.
 print(f"[{prediction[0]}] Prediction: {base_labels[prediction[0] - 1]}")
+
