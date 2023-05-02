@@ -34,11 +34,17 @@ torsocks curl -L http://httpbin.org/ip
 
 ## Required Python 3 Modules
 
+Firstly, activate a virtual environment:
+
 ``` bash
-pip install sklearn dpkt joblib
+cd path/to/website-fingerprinting
+python -m venv $PWD/venv
+source venv/bin/activate
+```
 
-# Or...
+And then install all the dependencies:
 
+``` bash
 pip install -r requirements.txt
 ```
 
